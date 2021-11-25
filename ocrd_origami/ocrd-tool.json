@@ -1,0 +1,46 @@
+{
+  "version": "0.0.1",
+  "git_url": "https://github.com/bertsky/ocrd_origami",
+  "tools": {
+    "ocrd-origami-segment": {
+      "executable": "ocrd-origami-segment",
+      "categories": ["Layout analysis"],
+      "description": "segment with origami",
+      "input_file_grp": [],
+      "output_file_grp": [],
+      "steps": ["layout/analysis",
+                "layout/segmentation/region",
+                "layout/segmentation/line",
+                "layout/segmentation/text-image"
+               ],
+      "parameters": {
+        "model": {
+          "type": "string",
+          "default": "bbz",
+          "description": "Path to the model directory (either absolute or relative to the resource location)."
+        },
+        "grayscale": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "target": {
+          "type": "string",
+          "enum": ["quality", "speed"],
+          "default": "quality",
+          "description": "whether to use multiple predictors and voting (slower/better) or single predictors (faster/worse)"
+        },
+        "detect-seps": {
+          "type": "boolean",
+          "default": true,
+          "description": "load separator detection submodel"
+        },
+        "detect-blks": {
+          "type": "boolean",
+          "default": true,
+          "description": "load region detection submodel"
+        }
+      }
+    }
+  }
+}
