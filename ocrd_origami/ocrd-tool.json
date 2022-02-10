@@ -16,6 +16,8 @@
       "parameters": {
         "model": {
           "type": "string",
+          "format": "uri",
+          "content-type": "directory",
           "default": "bbz",
           "description": "Path to the model directory (either absolute or relative to the resource location)."
         },
